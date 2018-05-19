@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ControleFamiliar.Negocio
+﻿namespace ControleFamiliar.Negocio
 {
     public abstract class ObjetoComId
     {

@@ -1,8 +1,8 @@
 ﻿using ControleFamiliar.Negocio;
+using ControleFamiliar.Processos;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using ControleFamiliar.Processos;
 
 namespace ControleFamiliar
 {
@@ -21,10 +21,10 @@ namespace ControleFamiliar
         {
             dgvItens.AutoGenerateColumns = false;
             dgvItens.DataSource = _bs;
-
-            dgvItens.Columns.Add(DgvHelper.AdicionaColuna("Descrição!!!", nameof(Item.Descricao), 300));
-            dgvItens.Columns.Add(DgvHelper.AdicionaColuna("Preco", nameof(Item.Preco), 300));
-            dgvItens.Columns.Add(DgvHelper.AdicionaColuna("Quantidade em Estoque", nameof(Item.QuantidadeEmEstoque), 300));
+            dgvItens.Columns.Add(DgvHelper.AdicionaColuna("Descrição!!!", nameof(Item.Descricao), 200));
+            dgvItens.Columns.Add(DgvHelper.AdicionaColuna("Preco", nameof(Item.Preco), 200));
+            dgvItens.Columns.Add(DgvHelper.AdicionaColuna("Quantidade em Estoque", nameof(Item.QuantidadeMinimaPorItem), 200));
+            dgvItens.Columns.Add(DgvHelper.AdicionaColuna("Unidade", nameof(Item.TipoUnidade), 200));
         }
 
         private void AjustaElementosDaTela()
@@ -39,7 +39,7 @@ namespace ControleFamiliar
         {
             if (!new ProcessoItens().CadastrarItem(ObtenhaParametros())) return;
 
-            MessageBox.Show(@"Item salvo com sucesso", @"Salvo com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show("Item salvo com sucesso", "Salvo com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             FormCadastroItem_Load(sender, e);
         }
 
@@ -47,7 +47,7 @@ namespace ControleFamiliar
         {
             decimal.TryParse(txtPreco.Text, out var preco);
 
-            return new DtoCadastroDeItens
+            var itens = new DtoCadastroDeItens
             {
                 Item = new Item
                 {
@@ -57,6 +57,8 @@ namespace ControleFamiliar
                     TipoUnidade = cbTipoDeUnidade.SelectedItem.ToString()
                 }
             };
+
+            return itens;
         }
 
         private void FormCadastroItem_Load(object sender, EventArgs e)
@@ -71,6 +73,12 @@ namespace ControleFamiliar
 
             var valor = Convert.ToDecimal(txtPreco.Text);
             txtPreco.Text = $@"{valor:N}";
+        }
+
+        private void btnRelatorio_Click(object sender, EventArgs e)
+        {
+            var lista = (List<Item>)_bs.DataSource;
+            new ProcessoItens().EmitaRelatorio(lista);
         }
     }
 }

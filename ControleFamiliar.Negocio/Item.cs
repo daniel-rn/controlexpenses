@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ControleFamiliar.Negocio
+﻿namespace ControleFamiliar.Negocio
 {
     public class Item : ObjetoComId
     {
@@ -11,11 +9,19 @@ namespace ControleFamiliar.Negocio
 
         public override bool Equals(object obj)
         {
-            var itemComparacao = obj as Item;
-
-            return itemComparacao?.Descricao == Descricao && itemComparacao?.TipoUnidade == TipoUnidade;
+            return (obj as Item)?.Descricao == Descricao && (obj as Item)?.TipoUnidade == TipoUnidade;
         }
 
-        public string ObtenhaPrecoFormatado() => Preco.ToString("###.##").Replace(',', '.');
+        public override int GetHashCode() => base.GetHashCode();
+
+        public string ObtenhaPrecoFormatado()
+        {
+            return Preco.ToString("###.##").Replace(',', '.');
+        }
+
+        public override string ToString()
+        {
+            return $"DESCRICAO: {Descricao}, PRECO: {Preco}, QUANTIDADE EM ESTOQUE: {QuantidadeMinimaPorItem}, TIPO: {TipoUnidade}";
+        }
     }
 }

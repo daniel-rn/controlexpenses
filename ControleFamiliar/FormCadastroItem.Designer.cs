@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
@@ -39,6 +39,7 @@
             this.cbTipoDeUnidade = new System.Windows.Forms.ComboBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRelatorio = new System.Windows.Forms.Button();
             this.txtQuantidadeMinima = new System.Windows.Forms.MaskedTextBox();
             this.dgvItens = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1.SuspendLayout();
@@ -47,16 +48,16 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(209, 78);
+            this.txtDescricao.Location = new System.Drawing.Point(183, 78);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(440, 20);
+            this.txtDescricao.Size = new System.Drawing.Size(209, 20);
             this.txtDescricao.TabIndex = 0;
             // 
             // txtPreco
             // 
-            this.txtPreco.Location = new System.Drawing.Point(209, 142);
+            this.txtPreco.Location = new System.Drawing.Point(183, 109);
             this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(112, 20);
+            this.txtPreco.Size = new System.Drawing.Size(209, 20);
             this.txtPreco.TabIndex = 2;
             this.txtPreco.Validated += new System.EventHandler(this.txtPreco_Validated);
             // 
@@ -74,7 +75,7 @@
             // 
             this.lbPreco.AutoSize = true;
             this.lbPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPreco.Location = new System.Drawing.Point(5, 142);
+            this.lbPreco.Location = new System.Drawing.Point(5, 109);
             this.lbPreco.Name = "lbPreco";
             this.lbPreco.Size = new System.Drawing.Size(55, 20);
             this.lbPreco.TabIndex = 5;
@@ -84,17 +85,17 @@
             // 
             this.lbQuantidadeMinima.AutoSize = true;
             this.lbQuantidadeMinima.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQuantidadeMinima.Location = new System.Drawing.Point(5, 174);
+            this.lbQuantidadeMinima.Location = new System.Drawing.Point(5, 140);
             this.lbQuantidadeMinima.Name = "lbQuantidadeMinima";
-            this.lbQuantidadeMinima.Size = new System.Drawing.Size(163, 20);
+            this.lbQuantidadeMinima.Size = new System.Drawing.Size(174, 20);
             this.lbQuantidadeMinima.TabIndex = 6;
-            this.lbQuantidadeMinima.Text = "Quantidade minima";
+            this.lbQuantidadeMinima.Text = "Quantidade/Estoque";
             // 
             // lblTipoUnidade
             // 
             this.lblTipoUnidade.AutoSize = true;
             this.lblTipoUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoUnidade.Location = new System.Drawing.Point(5, 110);
+            this.lblTipoUnidade.Location = new System.Drawing.Point(398, 78);
             this.lblTipoUnidade.Name = "lblTipoUnidade";
             this.lblTipoUnidade.Size = new System.Drawing.Size(140, 20);
             this.lblTipoUnidade.TabIndex = 7;
@@ -103,9 +104,9 @@
             // cbTipoDeUnidade
             // 
             this.cbTipoDeUnidade.FormattingEnabled = true;
-            this.cbTipoDeUnidade.Location = new System.Drawing.Point(209, 110);
+            this.cbTipoDeUnidade.Location = new System.Drawing.Point(544, 78);
             this.cbTipoDeUnidade.Name = "cbTipoDeUnidade";
-            this.cbTipoDeUnidade.Size = new System.Drawing.Size(112, 21);
+            this.cbTipoDeUnidade.Size = new System.Drawing.Size(88, 21);
             this.cbTipoDeUnidade.TabIndex = 1;
             // 
             // btnCadastrar
@@ -122,17 +123,28 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnCadastrar);
+            this.flowLayoutPanel1.Controls.Add(this.btnRelatorio);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(800, 63);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(800, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(84, 179);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(84, 242);
             this.flowLayoutPanel1.TabIndex = 10;
+            // 
+            // btnRelatorio
+            // 
+            this.btnRelatorio.Location = new System.Drawing.Point(3, 49);
+            this.btnRelatorio.Name = "btnRelatorio";
+            this.btnRelatorio.Size = new System.Drawing.Size(75, 35);
+            this.btnRelatorio.TabIndex = 1;
+            this.btnRelatorio.Text = "&Relatorio";
+            this.btnRelatorio.UseVisualStyleBackColor = true;
+            this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_Click);
             // 
             // txtQuantidadeMinima
             // 
-            this.txtQuantidadeMinima.Location = new System.Drawing.Point(209, 174);
+            this.txtQuantidadeMinima.Location = new System.Drawing.Point(183, 140);
             this.txtQuantidadeMinima.Name = "txtQuantidadeMinima";
-            this.txtQuantidadeMinima.Size = new System.Drawing.Size(112, 20);
+            this.txtQuantidadeMinima.Size = new System.Drawing.Size(209, 20);
             this.txtQuantidadeMinima.TabIndex = 3;
             // 
             // dgvItens
@@ -141,23 +153,24 @@
             this.dgvItens.AllowUserToDeleteRows = false;
             this.dgvItens.AllowUserToResizeRows = false;
             this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItens.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvItens.Location = new System.Drawing.Point(0, 242);
             this.dgvItens.Name = "dgvItens";
@@ -215,6 +228,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.MaskedTextBox txtQuantidadeMinima;
         private System.Windows.Forms.DataGridView dgvItens;
+        private System.Windows.Forms.Button btnRelatorio;
     }
 }
 

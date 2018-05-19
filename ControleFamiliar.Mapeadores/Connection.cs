@@ -1,5 +1,5 @@
-﻿using System.Data.Common;
-using FirebirdSql.Data.FirebirdClient;
+﻿using FirebirdSql.Data.FirebirdClient;
+using System.Data.Common;
 
 namespace ControleFamiliar.Mapeadores
 {
@@ -24,7 +24,7 @@ namespace ControleFamiliar.Mapeadores
         private static string ObtenhaConfiguracoesBanco()
         {
             var configuracoesBanco = "User=SYSDBA;Password=masterkey";
-            configuracoesBanco += ";Database = C:\\WorkNascimento\\baseDeDados\\CONTROLEFAMILIAR.FDB";
+            configuracoesBanco += ";Database = C:\\WorkNascimento\\BasesDeDados\\CONTROLEFAMILIAR.FDB";
             configuracoesBanco += ";Port=3050;Dialect=3;Charset=NONE;Role=;Connection lifetime=0;";
             configuracoesBanco += "Connection timeout=7;Pooling=True;Packet Size=8192;Server Type=0";
             return configuracoesBanco;
