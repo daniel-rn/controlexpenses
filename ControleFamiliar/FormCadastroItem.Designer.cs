@@ -42,6 +42,7 @@
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.txtQuantidadeMinima = new System.Windows.Forms.MaskedTextBox();
             this.dgvItens = new System.Windows.Forms.DataGridView();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.SuspendLayout();
@@ -123,16 +124,17 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnCadastrar);
+            this.flowLayoutPanel1.Controls.Add(this.btnExcluir);
             this.flowLayoutPanel1.Controls.Add(this.btnRelatorio);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(800, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(800, 63);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(84, 242);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(84, 179);
             this.flowLayoutPanel1.TabIndex = 10;
             // 
             // btnRelatorio
             // 
-            this.btnRelatorio.Location = new System.Drawing.Point(3, 49);
+            this.btnRelatorio.Location = new System.Drawing.Point(3, 90);
             this.btnRelatorio.Name = "btnRelatorio";
             this.btnRelatorio.Size = new System.Drawing.Size(75, 35);
             this.btnRelatorio.TabIndex = 1;
@@ -177,6 +179,16 @@
             this.dgvItens.RowHeadersVisible = false;
             this.dgvItens.Size = new System.Drawing.Size(884, 319);
             this.dgvItens.TabIndex = 12;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(3, 49);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 35);
+            this.btnExcluir.TabIndex = 2;
+            this.btnExcluir.Text = "&Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // FormCadastroItem
             // 
@@ -229,6 +241,7 @@
         private System.Windows.Forms.MaskedTextBox txtQuantidadeMinima;
         private System.Windows.Forms.DataGridView dgvItens;
         private System.Windows.Forms.Button btnRelatorio;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }
 

@@ -29,5 +29,10 @@ namespace ControleFamiliar.Processos
         {
             new RelatorioDeItens().EmitaRelatorio(listaItens);
         }
+
+        public bool ExcluirItem(Item item)
+        {
+            return new MapeadorDeItens().ExcluirItem(item);
+        }
     }
 }

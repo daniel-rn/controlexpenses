@@ -83,5 +83,18 @@ namespace ControleFamiliar.Mapeadores
 
             return itemRetorno;
         }
+
+        public bool ExcluirItem(Item item)
+        {
+            using (var transacao = Connection.ObtenhaFbTransaction())
+            {
+                var comando = Connection.ObtehaComando($"DELETE FROM ITEM WHERE NOME_ITEM = '{item.Descricao}' ");
+                comando.Transaction = transacao;
+                comando.ExecuteNonQuery();
+                comando.Transaction.Commit();
+            }
+
+            return true;
+        }
     }
 }

@@ -80,5 +80,16 @@ namespace ControleFamiliar
             var lista = (List<Item>)_bs.DataSource;
             new ProcessoItens().EmitaRelatorio(lista);
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            var itemParaExcluir = (Item)_bs.Current;
+            if (new ProcessoItens().ExcluirItem(itemParaExcluir))
+            {
+                MessageBox.Show("Item excluído com Sucesso !!");
+                Application.Restart();
+            }
+
+        }
     }
 }
