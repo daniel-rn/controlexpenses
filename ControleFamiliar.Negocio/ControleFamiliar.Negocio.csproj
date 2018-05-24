@@ -43,7 +43,7 @@
     <Compile Include="dtoCadastroDeItens.cs" />
     <Compile Include="EnumeradorDeUnidades.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="ObjetoComId.cs" />
+    <Compile Include="Entidade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

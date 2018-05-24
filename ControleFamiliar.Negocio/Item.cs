@@ -1,6 +1,6 @@
 ﻿namespace ControleFamiliar.Negocio
 {
-    public class Item : ObjetoComId
+    public class Item : Entidade
     {
         public int QuantidadeEmEstoque { get; set; }
         public int QuantidadeMinimaPorItem { get; set; }
@@ -12,7 +12,7 @@
             return (obj as Item)?.Descricao == Descricao && (obj as Item)?.TipoUnidade == TipoUnidade;
         }
 
-        public override int GetHashCode() => base.GetHashCode();
+        public override int GetHashCode() => Id.GetHashCode() * 17;
 
         public string ObtenhaPrecoFormatado()
         {
