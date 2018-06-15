@@ -63,8 +63,11 @@ namespace ControleFamiliar
 
         private void FormCadastroItem_Load(object sender, EventArgs e)
         {
-            var lista = new ProcessoItens().ObtenhaItensCadastrados().Items;
-            _bs.DataSource = lista;
+            if (!DesignMode)
+            {
+                var lista = new ProcessoItens().ObtenhaItensCadastrados().Items;
+                _bs.DataSource = lista;
+            }
         }
 
         private void txtPreco_Validated(object sender, EventArgs e)

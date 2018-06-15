@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ControleFamiliar
@@ -19,11 +12,10 @@ namespace ControleFamiliar
             InitializeComponent();
         }
 
-        private void ShowNewForm(object sender, EventArgs e, Form form)
+        private void ShowNewForm(Form childForm)
         {
-            Form childForm = form;
             childForm.MdiParent = this;
-            childForm.Text = "Window " + childFormNumber++;
+            childForm.WindowState = FormWindowState.Maximized;
             childForm.Show();
         }
 
@@ -51,7 +43,7 @@ namespace ControleFamiliar
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void CutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,7 +98,24 @@ namespace ControleFamiliar
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
-            this.ShowNewForm(sender,e,new FormCadastroItem());
+            ShowNewForm(new FormCadastroItem());
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ShowNewForm(new FormCadastroItem());
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var form = new FormCadastroItem();
+            ShowNewForm(form);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var form = new FormCadastroItem();
+            ShowNewForm(form);
         }
     }
 }

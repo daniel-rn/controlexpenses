@@ -14,9 +14,9 @@ namespace ControleFamiliar
             Application.EnableVisualStyles();
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormCadastroItem());
+            Application.Run(new FormPrincipal());
         }
 
-        
+
     }
 }

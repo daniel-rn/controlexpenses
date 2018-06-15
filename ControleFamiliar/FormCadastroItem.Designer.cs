@@ -209,7 +209,6 @@
             this.Name = "FormCadastroItem";
             this.Text = "Cadastro de Itens";
             this.Load += new System.EventHandler(this.FormCadastroItem_Load);
-            this.Enter += new System.EventHandler(this.BtnCadastrar_Click);
             this.Controls.SetChildIndex(this.txtDescricao, 0);
             this.Controls.SetChildIndex(this.txtPreco, 0);
             this.Controls.SetChildIndex(this.lblDescricao, 0);
@@ -224,7 +223,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
