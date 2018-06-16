@@ -2,6 +2,7 @@
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 
 namespace ControleFamiliar.Relatorios
@@ -17,7 +18,7 @@ namespace ControleFamiliar.Relatorios
             var celulaTitulo = new PdfPCell { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_CENTER };
             celulaTitulo.AddElement(new Paragraph("LISTA DE COMPRAS"));
             celulaTitulo.Colspan = 3;
-            celulaTitulo.BackgroundColor = Color.LIGHT_GRAY;
+            celulaTitulo.BackgroundColor = new BaseColor(Color.LightGray);
             tabela.AddCell(celulaTitulo);
 
             tabela.AddCell(new Phrase("DESCRIÇÃO"));
