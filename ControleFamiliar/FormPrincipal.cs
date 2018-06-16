@@ -117,5 +117,13 @@ namespace ControleFamiliar
             var form = new FormCadastroItem();
             ShowNewForm(form);
         }
+
+        private void helpToolStripButton_DoubleClick(object sender, EventArgs e)
+        {
+            var browser = new WebBrowser { Url = new Uri("https://www.google.com.br") };
+            browser.Parent = this;
+            browser.Visible = false;
+            browser.Show();
+        }
     }
 }
