@@ -69,6 +69,7 @@ namespace ControleFamiliar.Mapeadores
         public Item ObtenhaItemPorId(Item item)
         {
             var itemRetorno = new Item();
+
             using (var transacao = Connection.ObtenhaFbTransaction())
             {
                 var comando = Connection.ObtehaComando($"SELECT * FROM ITEM WHERE NOME_ITEM = '{item.Descricao}' ");

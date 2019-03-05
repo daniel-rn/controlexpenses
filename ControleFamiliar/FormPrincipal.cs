@@ -120,9 +120,13 @@ namespace ControleFamiliar
 
         private void helpToolStripButton_DoubleClick(object sender, EventArgs e)
         {
-            var browser = new WebBrowser { Url = new Uri("https://www.google.com.br") };
-            browser.Parent = this;
-            browser.Visible = false;
+            var browser = new WebBrowser
+            {
+                Url = new Uri("https://www.google.com.br"),
+                Parent = this,
+                Visible = false
+            };
+
             browser.Show();
         }
     }

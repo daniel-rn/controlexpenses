@@ -17,8 +17,10 @@ namespace ControleFamiliar.Relatorios
             tabela.DefaultCell.HasBorder(1);
             var celulaTitulo = new PdfPCell { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_CENTER };
             celulaTitulo.AddElement(new Paragraph("LISTA DE COMPRAS"));
+
             celulaTitulo.Colspan = 3;
             celulaTitulo.BackgroundColor = new BaseColor(Color.LightGray);
+            tabela.HorizontalAlignment = Element.ALIGN_CENTER;
             tabela.AddCell(celulaTitulo);
 
             tabela.AddCell(new Phrase("DESCRIÇÃO"));

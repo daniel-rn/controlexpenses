@@ -87,11 +87,11 @@ namespace ControleFamiliar
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             var itemParaExcluir = (Item)_bs.Current;
-            if (new ProcessoItens().ExcluirItem(itemParaExcluir))
-            {
-                MessageBox.Show("Item excluído com Sucesso !!");
-                Application.Restart();
-            }
+
+            if (!new ProcessoItens().ExcluirItem(itemParaExcluir)) return;
+
+            MessageBox.Show("Item excluído com Sucesso !!");
+            Application.Restart();
 
         }
     }
